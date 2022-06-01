@@ -85,6 +85,8 @@ class HistoryFragment : Fragment(), FragmentOperations {
         historyList.addAll(list)
         if(adapter.itemCount > 0){
             binding.noItems.visibility = View.GONE
+        } else {
+            binding.noItems.visibility = View.VISIBLE
         }
         adapter.notifyDataSetChanged()
     }

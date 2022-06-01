@@ -99,6 +99,10 @@ class ContactsFragment : Fragment(), FragmentOperations {
         adapter.notifyDataSetChanged()
         if(adapter.itemCount > 0){
             binding.noItems.visibility = View.GONE
+        } else {
+            binding.noItems.visibility = View.VISIBLE
+            binding.contactsProgressBar.visibility = View.GONE
+            binding.newItemButton.visibility = View.VISIBLE
         }
     }
 
@@ -161,6 +165,8 @@ class ContactsFragment : Fragment(), FragmentOperations {
                     binding.noItems.visibility = View.GONE
                 } else {
                     binding.noItems.visibility = View.VISIBLE
+                    binding.contactsProgressBar.visibility = View.GONE
+                    binding.newItemButton.visibility = View.VISIBLE
                 }
                 isLoading = false
             }

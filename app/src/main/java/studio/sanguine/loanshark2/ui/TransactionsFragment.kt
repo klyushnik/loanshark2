@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.coroutines.flow.combine
 import studio.sanguine.loanshark2.R
 import studio.sanguine.loanshark2.adapters.HistoryRecordAdapter
 import studio.sanguine.loanshark2.data.History
@@ -24,13 +25,14 @@ class TransactionsFragment(val contactId: Int) : DialogFragment() {
     lateinit var historyList : ArrayList<History>
     private lateinit var viewModel: TransactionsViewModel
     lateinit var adapter : HistoryRecordAdapter
+    lateinit var binding: FragmentTransactionsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        val binding = FragmentTransactionsBinding.inflate(inflater, container, false)
+        binding = FragmentTransactionsBinding.inflate(inflater, container, false)
 
         val vm = TransactionsViewModel(requireContext(), contactId)
         historyList = ArrayList()
@@ -55,6 +57,9 @@ class TransactionsFragment(val contactId: Int) : DialogFragment() {
         historyList.clear()
         historyList.addAll(list)
         adapter.notifyDataSetChanged()
+        if(adapter.itemCount == 0){
+            binding.noItems.visibility = View.VISIBLE
+        }
     }
 
 }
