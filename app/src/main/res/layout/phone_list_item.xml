@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/phone_item_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/phone_number_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginEnd="13dp"
+        android:layout_weight="1"
+        android:drawableStart="@drawable/ic_call_24"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/noto_sans_display_medium"
+        android:gravity="center_vertical"
+        android:text="5555555"
+        android:textColor="@color/dark_grey"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+</LinearLayout>

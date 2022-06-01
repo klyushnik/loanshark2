@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_newRecord"
+        android:icon="@drawable/ic_post_add_24"
+        android:title="New Records"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_newPerson"
+        android:icon="@drawable/ic_person_add_24"
+        android:title="New Person"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_search_24"
+        android:title="Search"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/menu_sort_asc"
+        android:icon="@drawable/ic_sort_24"
+        android:title="Sort by name ascending"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_sort_desc"
+        android:icon="@drawable/ic_sort_24"
+        android:title="Sort by name descending"
+        app:showAsAction="never" />
+
+</menu>

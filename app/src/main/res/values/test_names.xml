@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="test_names">
+        <item>Michael Scott</item>
+        <item>Dwight Schrute</item>
+        <item>Jim Halpert</item>
+        <item>Holly Flax</item>
+        <item>Jan Levinson</item>
+        <item>Kelly Kapoor</item>
+    </array>
+</resources>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/contact_root_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="8dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="@color/light_grey"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="13dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp">
+
+            <ImageView
+                android:id="@+id/contact_initials_background"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/circle_drawable"
+                app:tint="@color/red" />
+
+            <TextView
+                android:id="@+id/contact_initials_textview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:fontFamily="@font/noto_sans_display_bold"
+                android:gravity="center"
+                android:text="JD"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/contact_initials_background"
+                app:layout_constraintEnd_toEndOf="@+id/contact_initials_background"
+                app:layout_constraintStart_toStartOf="@+id/contact_initials_background"
+                app:layout_constraintTop_toTopOf="@+id/contact_initials_background" />
+
+            <TextView
+                android:id="@+id/contact_name_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:fontFamily="@font/noto_sans_display_bold"
+                android:text="John Doe"
+                android:textColor="@color/dark_grey"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@+id/contact_initials_background"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/contact_first_phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:fontFamily="@font/noto_sans_display_bold"
+                android:text="555-5555"
+                android:textColor="@color/red"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/contact_initials_background"
+                app:layout_constraintTop_toBottomOf="@id/contact_name_textview" />
+
+            <ImageButton
+                android:id="@+id/contact_edit_button"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/circle_ripple"
+                android:backgroundTint="@color/dark_grey"
+                android:cropToPadding="false"
+                android:elevation="5dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_edit_24"
+                app:tint="@color/white"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contact_long_desc_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contact_initials_background">
+
+                <LinearLayout
+                    android:id="@+id/contact_line_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/contact_phonenumbers_label"
+                        android:layout_width="0dp"
+                        android:layout_height="46dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_display_semibold"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="5dp"
+                        android:text="Phone Number(s):"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14sp" />
+
+                    <studio.sanguine.loanshark2.ui.NonScrollListView
+                        android:id="@+id/phone_numbers_listview"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        tools:listitem="@layout/phone_list_item" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contact_line_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_line_1">
+
+                    <TextView
+                        android:id="@+id/contact_borrower_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_display_semibold"
+                        android:paddingVertical="5dp"
+                        android:text="Owes Me:"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/contact_borrower_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/noto_sans_display_medium"
+                        android:paddingVertical="5dp"
+                        android:paddingStart="13dp"
+                        android:text="$20000"
+                        android:textColor="@color/dark_grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contact_line_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_line_2">
+
+                    <TextView
+                        android:id="@+id/contact_creditor_label"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/noto_sans_display_semibold"
+                        android:paddingVertical="5dp"
+                        android:text="I Owe:"
+                        android:textAlignment="textEnd"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/contact_creditor_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/noto_sans_display_medium"
+                        android:paddingVertical="5dp"
+                        android:paddingStart="13dp"
+                        android:text="$50"
+                        android:textColor="@color/dark_grey" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contact_line_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_line_3">
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/contact_transactions_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:padding="10dp"
+                    android:text="View Transactions"
+                    app:icon="@drawable/ic_receipt_24"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/contact_line_4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_newRecord"
+        android:icon="@drawable/ic_attach_money_24"
+        android:title="@string/title_borrowers" />
+
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_money_off_24"
+        android:title="@string/title_creditors" />
+
+    <item
+        android:id="@+id/menu_sort"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/title_contacts" />
+
+    <item
+        android:id="@+id/navigation_history"
+        android:icon="@drawable/ic_history_24"
+        android:title="@string/title_history" />
+
+</menu>
