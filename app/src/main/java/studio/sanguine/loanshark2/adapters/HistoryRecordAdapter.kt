@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import studio.sanguine.loanshark2.R
 import studio.sanguine.loanshark2.data.History
+import java.text.NumberFormat
 
 class HistoryRecordAdapter(var data: List<History>) : RecyclerView.Adapter<HistoryViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HistoryViewHolder {
@@ -15,9 +16,10 @@ class HistoryRecordAdapter(var data: List<History>) : RecyclerView.Adapter<Histo
     }
 
     override fun onBindViewHolder(holder: HistoryViewHolder, position: Int) {
+        val numberFormat = NumberFormat.getCurrencyInstance()
         val item = data.get(position)
         holder.name.setText(item.name)
-        holder.paymentAmt.setText(item.paymentAmount.toString())
+        holder.paymentAmt.setText(numberFormat.format(item.paymentAmount))
         holder.date.setText(item.paymentDate)
         holder.desc.setText(item.desc)
         holder.final.visibility = if(item.isFinal) View.VISIBLE else View.GONE
